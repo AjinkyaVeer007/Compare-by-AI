@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { smartphoneList } from "../utils/data";
+import { smartphoneList } from "../utils/smartPhonedata";
 import FeaturesCards from "../components/FeaturesCards";
 import GraphicalRepresentation from "../components/GraphicalRepresentation";
 import { useGraphicalDataModifier } from "../hooks/useGraphicalDataModifier";
@@ -18,21 +18,26 @@ function Smartphones() {
   const fetchByAI = async () => {
     setResult({});
     setGraphicalData([]);
-    const res = await smartphoneModel.generateContent(
-      `List the features of given two smartphones. ${smartphone1?.value} and ${smartphone2?.value}`
-    );
+    try {
+      const res = await smartphoneModel.generateContent(
+        `List the features of given two smartphones. ${smartphone1?.value} and ${smartphone2?.value}`
+      );
 
-    let exeutableResponse = JSON.parse(res?.response?.text());
+      let exeutableResponse = JSON.parse(res?.response?.text());
 
-    setResult(exeutableResponse);
+      setResult(exeutableResponse);
 
-    setGraphicalData(
-      graphicalDataModifier(
-        exeutableResponse?.graphicalData,
-        smartphone1?.value,
-        smartphone2?.value
-      )
-    );
+      setGraphicalData(
+        graphicalDataModifier(
+          exeutableResponse?.graphicalData,
+          smartphone1?.value,
+          smartphone2?.value
+        )
+      );
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
   };
 
   return (

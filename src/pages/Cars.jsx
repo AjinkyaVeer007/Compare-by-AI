@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { smartphoneList } from "../utils/data";
+import { carList } from "../utils/carsData";
 import FeaturesCards from "../components/FeaturesCards";
 import GraphicalRepresentation from "../components/GraphicalRepresentation";
 import { useGraphicalDataModifier } from "../hooks/useGraphicalDataModifier";
-import { smartphoneModel } from "../utils/genAi";
+import { carModel } from "../utils/genAi";
 import WinnerCard from "../components/WinnerCard";
+import toast from "react-hot-toast";
 
 function Cars() {
-  const [smartphone1, setSmartphone1] = useState(null);
-  const [smartphone2, setSmartphone2] = useState(null);
+  const [car1, setCar1] = useState(null);
+  const [car2, setCar2] = useState(null);
   const [result, setResult] = useState({});
   const [graphicalData, setGraphicalData] = useState([]);
 
@@ -18,37 +19,42 @@ function Cars() {
   const fetchByAI = async () => {
     setResult({});
     setGraphicalData([]);
-    const res = await smartphoneModel.generateContent(
-      `List the features of given two smartphones. ${smartphone1?.value} and ${smartphone2?.value}`
-    );
+    try {
+      const res = await carModel.generateContent(
+        `List the features of given two cars. ${car1?.value} and ${car2?.value}`
+      );
 
-    let exeutableResponse = JSON.parse(res?.response?.text());
+      let exeutableResponse = JSON.parse(res?.response?.text());
 
-    setResult(exeutableResponse);
+      setResult(exeutableResponse);
 
-    setGraphicalData(
-      graphicalDataModifier(
-        exeutableResponse?.graphicalData,
-        smartphone1?.value,
-        smartphone2?.value
-      )
-    );
+      setGraphicalData(
+        graphicalDataModifier(
+          exeutableResponse?.graphicalData,
+          car1?.value,
+          car2?.value
+        )
+      );
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
   };
 
   return (
     <div className="m-3">
       <div className="d-flex justify-content-center align-items-center gap-4 mx-5">
         <Select
-          options={smartphoneList}
+          options={carList}
           className="w-100"
-          value={smartphone1}
-          onChange={(e) => setSmartphone1(e)}
+          value={car1}
+          onChange={(e) => setCar1(e)}
         />
         <Select
-          options={smartphoneList}
+          options={carList}
           className="w-100"
-          value={smartphone2}
-          onChange={(e) => setSmartphone2(e)}
+          value={car2}
+          onChange={(e) => setCar2(e)}
         />
       </div>
       <div className="text-center mt-2">
@@ -65,8 +71,8 @@ function Cars() {
         <div className="mt-2">
           <GraphicalRepresentation
             data={graphicalData}
-            one={smartphone1?.value}
-            two={smartphone2?.value}
+            one={car1?.value}
+            two={car2?.value}
           />
         </div>
       )}

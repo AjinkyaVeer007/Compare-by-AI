@@ -1,163 +1,316 @@
 import { SchemaType } from "@google/generative-ai";
 
 export const carSchema = {
-  description: "Create an object for comparision of given two smartphones",
+  description: "Create an object for comparision of given two cars",
   type: SchemaType.OBJECT,
   properties: {
     comparision: {
-      description: "Comparision of given two smartphones",
+      description: "Comparision of given two cars",
       type: SchemaType.OBJECT,
       nullable: false,
       properties: {
-        displaySize: {
+        engine: {
           type: SchemaType.OBJECT,
-          description: "Display size of smartphones",
+          description: "Engine of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Display size of first smartphone",
+              description: "Engine of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Display size of second smartphone",
+              description: "Engine of second car",
               nullable: false,
             },
           },
         },
-        displayType: {
+        fuelType: {
           type: SchemaType.OBJECT,
-          description: "Display type of smartphones",
+          description: "Fuel type of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Display type of first smartphone",
+              description: "Fuel type of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Display type of second smartphone",
+              description: "Fuel type of second car",
               nullable: false,
             },
           },
         },
-        os: {
+        power: {
           type: SchemaType.OBJECT,
-          description: "Operating system of smartphones",
+          description: "Maximum power of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Operating system of first smartphone",
+              description: "Maximum power of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Operating system of second smartphone",
+              description: "Maximum power of second car",
               nullable: false,
             },
           },
         },
-        ram: {
+        torque: {
           type: SchemaType.OBJECT,
-          description: "Ram of smartphones",
+          description: "Maximum torque of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Ram of first smartphone",
+              description: "Maximum torque of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Ram of second smartphone",
+              description: "Maximum torque of second car",
               nullable: false,
             },
           },
         },
-        processor: {
+        driveTrain: {
           type: SchemaType.OBJECT,
-          description: "Processor of smartphones",
+          description: "Drivetrain of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Processor of first smartphone",
+              description: "Drivetrain of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Processor of second smartphone",
+              description: "Drivetrain of second car",
               nullable: false,
             },
           },
         },
-        storage: {
+        transmission: {
           type: SchemaType.OBJECT,
-          description: "Storage of smartphone",
+          description: "Transmission of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Storage of first smartphone",
+              description: "Transmission of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Storage of first smartphone",
+              description: "Transmission of second car",
               nullable: false,
             },
           },
         },
-        frontCamera: {
+        emissionStandard: {
           type: SchemaType.OBJECT,
-          description: "Front camera of smartphone",
+          description: "Emission Standard of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Front camera of first smartphone",
+              description: "Emission Standard of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Front camera of second smartphone",
+              description: "Emission Standard of first car",
               nullable: false,
             },
           },
         },
-        backCamera: {
+        seatingCapacity: {
           type: SchemaType.OBJECT,
-          description: "Back camera of smartphone",
+          description: "Seating Capacity of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Back camera of first smartphone",
+              description: "Seating Capacity of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Back camera of second smartphone",
+              description: "Seating Capacity of second car",
               nullable: false,
             },
           },
         },
-        battery: {
+        fuelTankCapacity: {
           type: SchemaType.OBJECT,
-          description: "Battery details of smartphone",
+          description: "Fuel Tank Capacity of cars",
           nullable: false,
           properties: {
             0: {
               type: SchemaType.STRING,
-              description: "Battery details of first smartphone",
+              description: "Fuel Tank Capacity of first car",
               nullable: false,
             },
             1: {
               type: SchemaType.STRING,
-              description: "Battery details of second smartphone",
+              description: "Fuel Tank Capacity of second car",
+              nullable: false,
+            },
+          },
+        },
+        suspension: {
+          type: SchemaType.OBJECT,
+          description: "Suspension of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Suspension of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Suspension of second car",
+              nullable: false,
+            },
+          },
+        },
+        brakes: {
+          type: SchemaType.OBJECT,
+          description: "Brakes type of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Brakes type of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Brakes type of second car",
+              nullable: false,
+            },
+          },
+        },
+        rating: {
+          type: SchemaType.OBJECT,
+          description: "NCAP Rating of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "NCAP Rating of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "NCAP Rating of second car",
+              nullable: false,
+            },
+          },
+        },
+        airbags: {
+          type: SchemaType.OBJECT,
+          description: "Airbags of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Airbags of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Airbags of second car",
+              nullable: false,
+            },
+          },
+        },
+        headLights: {
+          type: SchemaType.OBJECT,
+          description: "Head lights of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Head lights of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Head lights of second car",
+              nullable: false,
+            },
+          },
+        },
+        tailLights: {
+          type: SchemaType.OBJECT,
+          description: "Tail light of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Tail light of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Tail light of second car",
+              nullable: false,
+            },
+          },
+        },
+        warranty: {
+          type: SchemaType.OBJECT,
+          description: "Warranty of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Warranty of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Warranty of second car",
+              nullable: false,
+            },
+          },
+        },
+        colors: {
+          type: SchemaType.OBJECT,
+          description: "Available colors of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Available colors of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Available colors of second car",
+              nullable: false,
+            },
+          },
+        },
+        price: {
+          type: SchemaType.OBJECT,
+          description: "Price in india of cars",
+          nullable: false,
+          properties: {
+            0: {
+              type: SchemaType.STRING,
+              description: "Price in india of first car",
+              nullable: false,
+            },
+            1: {
+              type: SchemaType.STRING,
+              description: "Price in india of second car",
               nullable: false,
             },
           },
@@ -165,154 +318,280 @@ export const carSchema = {
       },
     },
     graphicalData: {
-      description: "Create an object for rating of features of two smartphones",
+      description: "Create an object for rating of features of two cars",
       type: SchemaType.OBJECT,
       nullable: false,
       properties: {
-        displaySize: {
+        engine: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for display size by comparing two smartphones",
+            "Rate in between 1 to 5 for engine by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for display size of smartphone 1",
+              description: "Rate in between 1 to 5 for engine of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for display size of smartphone 2",
+              description: "Rate in between 1 to 5 for engine of car 2",
             },
           },
         },
-        displayType: {
+        fuelType: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for display type by comparing two smartphones",
+            "Rate in between 1 to 5 for fuel type by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for display type of smartphone 1",
+              description: "Rate in between 1 to 5 for fuel type of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for display type of smartphone 2",
+              description: "Rate in between 1 to 5 for fuel type of car 2",
             },
           },
         },
-        os: {
+        power: {
           type: SchemaType.OBJECT,
-          description:
-            "Rate in between 1 to 5 for operating system by comparing two smartphones",
+          description: "Rate in between 1 to 5 for power by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for operating system of smartphone 1",
+              description: "Rate in between 1 to 5 for power of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for operating system of smartphone 2",
+              description: "Rate in between 1 to 5 for power of car 2",
             },
           },
         },
-        ram: {
+        torque: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for ram by comparing two smartphones",
+            "Rate in between 1 to 5 for torque by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description: "Rate in between 1 to 5 for ram of smartphone 1",
+              description: "Rate in between 1 to 5 for torque of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description: "Rate in between 1 to 5 for ram of smartphone 2",
+              description: "Rate in between 1 to 5 for torque of car 2",
             },
           },
         },
-        processor: {
+        driveTrain: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for processor by comparing two smartphones",
+            "Rate in between 1 to 5 for drive train by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for processor of smartphone 1",
+              description: "Rate in between 1 to 5 for drive train of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for processor of smartphone 2",
+              description: "Rate in between 1 to 5 for drive train of car 2",
             },
           },
         },
-        storage: {
+        transmission: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for storage by comparing two smartphones",
+            "Rate in between 1 to 5 for transmission by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description: "Rate in between 1 to 5 for storage of smartphone 1",
+              description: "Rate in between 1 to 5 for transmission of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description: "Rate in between 1 to 5 for storage of smartphone 2",
+              description: "Rate in between 1 to 5 for transmission of car 2",
             },
           },
         },
-        frontCamera: {
+        emissionStandard: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for front camera by comparing two smartphones",
+            "Rate in between 1 to 5 for emission standard by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
               description:
-                "Rate in between 1 to 5 for front camera of smartphone 1",
+                "Rate in between 1 to 5 for emission standard of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
               description:
-                "Rate in between 1 to 5 for front camera of smartphone 2",
+                "Rate in between 1 to 5 for emission standard of car 2",
             },
           },
         },
-        backCamera: {
+        seatingCapacity: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for back camera by comparing two smartphones",
+            "Rate in between 1 to 5 for seat capacity by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for back camera of smartphone 1",
+              description: "Rate in between 1 to 5 for seat capacity of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description:
-                "Rate in between 1 to 5 for back camera of smartphone 2",
+              description: "Rate in between 1 to 5 for seat capacity of car 2",
             },
           },
         },
-        battery: {
+        fuelTankCapacity: {
           type: SchemaType.OBJECT,
           description:
-            "Rate in between 1 to 5 for battery by comparing two smartphones",
+            "Rate in between 1 to 5 for fuel tank capacity by comparing two cars",
           properties: {
             0: {
               type: SchemaType.NUMBER,
-              description: "Rate in between 1 to 5 for battery of smartphone 1",
+              description:
+                "Rate in between 1 to 5 for fuel tank capacity of car 1",
             },
             1: {
               type: SchemaType.NUMBER,
-              description: "Rate in between 1 to 5 for battery of smartphone 2",
+              description:
+                "Rate in between 1 to 5 for fuel tank capacity of car 2",
+            },
+          },
+        },
+        suspension: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for suspension by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for suspension of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for suspension of car 2",
+            },
+          },
+        },
+        brakes: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for break type by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for break type of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for break type of car 2",
+            },
+          },
+        },
+        rating: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for NCAP Rating by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for NCAP Rating of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for NCAP Rating of car 2",
+            },
+          },
+        },
+        airbags: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for airbags by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for airbags of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for airbags of car 2",
+            },
+          },
+        },
+        headLights: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for head lights by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for head lights of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for head lights of car 2",
+            },
+          },
+        },
+        tailLights: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for tail lights by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for tail lights of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for tail lights of car 2",
+            },
+          },
+        },
+        warranty: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for warranty by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for warranty of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for warranty of car 2",
+            },
+          },
+        },
+        colors: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for colors by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for colors of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for colors of car 2",
+            },
+          },
+        },
+        price: {
+          type: SchemaType.OBJECT,
+          description:
+            "Rate in between 1 to 5 for price in india by comparing two cars",
+          properties: {
+            0: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for price in india of car 1",
+            },
+            1: {
+              type: SchemaType.NUMBER,
+              description: "Rate in between 1 to 5 for price in india of car 2",
             },
           },
         },
@@ -320,8 +599,7 @@ export const carSchema = {
     },
     winner: {
       type: SchemaType.STRING,
-      description:
-        "Based on the result give the winner smartphone of one of them",
+      description: "Based on the result give the winner car of one of them",
     },
   },
 };

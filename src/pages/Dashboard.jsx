@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryCard from "../components/CategoryCard";
-import { categories } from "../utils/data";
+import { categories } from "../utils/smartPhonedata";
 
 function Dashboard() {
   return (
