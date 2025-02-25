@@ -1,18 +1,3 @@
-export const categories = [
-  {
-    name: "Smartphones",
-    navigate: "smartphones",
-  },
-  {
-    name: "Cars",
-    navigate: "cars",
-  },
-  {
-    name: "Bikes",
-    navigate: "bikes",
-  },
-];
-
 const applePhoneList = [
   { label: "iPhone", value: "iPhone" },
   { label: "iPhone 3G", value: "iPhone 3G" },

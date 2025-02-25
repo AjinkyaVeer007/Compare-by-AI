@@ -7,11 +7,10 @@ function CategoryCard({ data }) {
     <div
       onClick={() => navigate(data?.navigate)}
       style={{ width: "300px", height: "150px" }}
-      className="border rounded pointer shadow-sm"
+      className="categoryCard rounded pointer d-flex justify-content-start align-items-center"
     >
-      <div style={{ fontSize: "25px" }} className="fw-bold p-2">
-        {data?.name}
-      </div>
+      <h3 className="fw-bold ms-4">{data?.name}</h3>
+      <div className="categoryIcon">{data?.icon}</div>
     </div>
   );
 }
