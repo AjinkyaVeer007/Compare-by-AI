@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Smartphones from "./pages/Smartphones";
 import Cars from "./pages/Cars";
 import { Toaster } from "react-hot-toast";
+import Bikes from "./pages/Bikes";
 
 function App() {
   const routes = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
     {
       path: "cars",
       element: <Cars />,
+    },
+    {
+      path: "bikes",
+      element: <Bikes />,
     },
   ]);
   return (
