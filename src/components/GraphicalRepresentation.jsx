@@ -1,34 +1,30 @@
 import React from "react";
 import {
-  AreaChart,
-  Area,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
-  Tooltip,
+  Legend,
   ResponsiveContainer,
 } from "recharts";
 
 function GraphicalRepresentation({ data, one, two }) {
   return (
-    <div style={{ height: "400px", width: "80%" }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area type="monotone" dataKey={one} stroke="#e23670" fill="#e23670" />
-          <Area type="monotone" dataKey={two} stroke="#2662d9" fill="#2662d9" />
-        </AreaChart>
+    <div
+      style={{ maxHeight: "200vh", height: "500px", width: "100%" }}
+      className="graphCard rounded p-4"
+    >
+      <div className="fs-5 fw-medium mb-2">
+        Graphical representaion of features based on 1 to 5 rating
+      </div>
+      <ResponsiveContainer width="100%" height="95%">
+        <BarChart width={500} height={300} data={data}>
+          <XAxis dataKey="name" axisLine={false} tick={{ fill: "#fff" }} />
+          {/* <YAxis axisLine={false} tick={{ fill: "#fff" }} /> */}
+          <Legend />
+          <Bar dataKey={one} fill="#e23670" radius={6} />
+          <Bar dataKey={two} fill="#2662d9" radius={6} />
+        </BarChart>
       </ResponsiveContainer>
     </div>
   );

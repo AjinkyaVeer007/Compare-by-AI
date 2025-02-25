@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: "Poppins", sans-serif !important;
   background-color: #0f172a !important;
@@ -14,6 +18,7 @@ body {
   color: #fff;
   position: relative;
   overflow: hidden;
+  transition: 0.3s ease-in-out;
 }
 
 .categoryIcon {
@@ -32,4 +37,64 @@ body {
   transform: scale(0.85);
   color: #f67373;
   opacity: 1;
+}
+
+.categoryCard:hover {
+  transform: scale(0.9);
+}
+
+.reactSelect {
+  font-size: 14px;
+}
+
+.css-13cymwt-control {
+  border: none !important;
+}
+
+.css-13cymwt-control,
+.css-t3ipsp-control,
+.css-hlgwow {
+  background-color: #0f172a !important;
+}
+
+.css-1dimb5e-singleValue {
+  color: #fff !important;
+}
+
+.aiBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.aiBtn > button {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  gap: 10px;
+  background-color: #f67373;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+}
+
+.featureCard,
+.winnerCard,
+.graphCard {
+  background-color: #1d2840;
+  color: #fff;
+}
+
+.animeShake {
+  animation: shake 0.5s infinite ease-in-out;
+}
+
+@keyframes shake {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(0.9);
+  }
 }

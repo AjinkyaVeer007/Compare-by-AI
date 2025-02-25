@@ -28,8 +28,8 @@ function Dashboard() {
         <img src={logo} alt="gemini logo" style={{ height: "80px" }} />
       </div>
       <div className="d-flex justify-content-center align-items-center flex-wrap gap-3 m-3">
-        {categories.map((cat) => (
-          <CategoryCard key={cat?.name} data={cat} />
+        {categories.map((cat, i) => (
+          <CategoryCard key={cat?.name} data={cat} animationdelay={i * 100} />
         ))}
       </div>
     </div>

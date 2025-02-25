@@ -5,24 +5,31 @@ import Smartphones from "./pages/Smartphones";
 import Cars from "./pages/Cars";
 import { Toaster } from "react-hot-toast";
 import Bikes from "./pages/Bikes";
+import Layout from "./layout/Layout";
 
 function App() {
   const routes = createBrowserRouter([
     {
       path: "",
-      element: <Dashboard />,
-    },
-    {
-      path: "smartphones",
-      element: <Smartphones />,
-    },
-    {
-      path: "cars",
-      element: <Cars />,
-    },
-    {
-      path: "bikes",
-      element: <Bikes />,
+      element: <Layout />,
+      children: [
+        {
+          path: "",
+          element: <Dashboard />,
+        },
+        {
+          path: "/smartphones",
+          element: <Smartphones />,
+        },
+        {
+          path: "/cars",
+          element: <Cars />,
+        },
+        {
+          path: "/bikes",
+          element: <Bikes />,
+        },
+      ],
     },
   ]);
   return (
